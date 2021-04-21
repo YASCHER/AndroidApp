@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherCast.Android", "WeatherCast.Android\WeatherCast.Android.csproj", "{9A03DA6E-5029-47A2-948C-58F224221D0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherCast", "WeatherCast\WeatherCast.csproj", "{B31DF1C9-5520-4243-9285-4D7487D01258}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A03DA6E-5029-47A2-948C-58F224221D0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A03DA6E-5029-47A2-948C-58F224221D0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A03DA6E-5029-47A2-948C-58F224221D0C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9A03DA6E-5029-47A2-948C-58F224221D0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A03DA6E-5029-47A2-948C-58F224221D0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A03DA6E-5029-47A2-948C-58F224221D0C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B31DF1C9-5520-4243-9285-4D7487D01258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31DF1C9-5520-4243-9285-4D7487D01258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31DF1C9-5520-4243-9285-4D7487D01258}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B31DF1C9-5520-4243-9285-4D7487D01258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31DF1C9-5520-4243-9285-4D7487D01258}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B31DF1C9-5520-4243-9285-4D7487D01258}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12B46D7E-3DC7-4B29-9DE1-3014CAD761F7}
+	EndGlobalSection
+EndGlobal
