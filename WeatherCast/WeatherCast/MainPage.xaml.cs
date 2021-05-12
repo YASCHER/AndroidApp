@@ -17,5 +17,10 @@ namespace WeatherCast
             InitializeComponent();
 
         }
+
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            CityCollection col = await WeatherAPI.FindCity("Кама");
+        }
     }
 }
