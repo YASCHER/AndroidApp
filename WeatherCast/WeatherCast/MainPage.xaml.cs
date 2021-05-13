@@ -20,7 +20,7 @@ namespace WeatherCast
 
         private async void ImageButton_Clicked(object sender, EventArgs e)
         {
-            CityCollection col = await WeatherAPI.FindCity("Кама");
+            Weather col = await WeatherAPI.GetCurrentWeather("2960");
         }
     }
 }

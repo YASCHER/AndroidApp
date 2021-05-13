@@ -99,5 +99,32 @@ namespace WeatherCast
                 throw new Exception("Ошибка запроса");
             }
         }
+
+        public static async Task<Weather> GetCurrentWeather(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                throw new Exception("Код города пустой");
+            }
+
+            NameValueCollection parameters = new NameValueCollection();
+
+            parameters.Add("id", id);
+            parameters.Add("appid", AppId);
+            parameters.Add("lang", "ru");
+
+            WeatherAPIResponse weatherAPIResponse = await Get(RequestType.CurrentWeather, parameters);
+
+            if (weatherAPIResponse.Successful)
+            {
+                Weather currentWeather = JsonConvert.DeserializeObject<Weather>(weatherAPIResponse.ResponseText);
+                return currentWeather;
+            }
+            else
+            {
+                throw new Exception("Ошибка запроса");
+            }
+
+        }
     }
 }
