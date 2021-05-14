@@ -20,7 +20,7 @@ namespace WeatherCast
 
         private async void ImageButton_Clicked(object sender, EventArgs e)
         {
-            Weather col = await WeatherAPI.GetCurrentWeather("2960");
+            WeatherCollection col = await WeatherAPI.GetWeatherForecast("34.9401", "36.3219");
         }
     }
 }

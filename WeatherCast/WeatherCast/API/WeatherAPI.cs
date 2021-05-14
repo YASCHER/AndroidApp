@@ -126,5 +126,36 @@ namespace WeatherCast
             }
 
         }
+
+
+        public static async Task<WeatherCollection> GetWeatherForecast(string lat, string lon)
+        {
+            if (string.IsNullOrEmpty(lat) || string.IsNullOrEmpty(lon))
+            {
+                throw new Exception("Ширина и долгота неверны");
+            }
+
+            NameValueCollection parameters = new NameValueCollection();
+
+            parameters.Add("lat", lat);
+            parameters.Add("lon", lon);
+            parameters.Add("units", "metric");
+            parameters.Add("exclude", "current,hourly,minutely,alerts");
+            parameters.Add("appid", AppId);
+            parameters.Add("lang", "ru");
+
+            WeatherAPIResponse weatherAPIResponse = await Get(RequestType.DailyForecast, parameters);
+
+            if (weatherAPIResponse.Successful)
+            {
+                WeatherCollection weatherCollection = JsonConvert.DeserializeObject<WeatherCollection>(weatherAPIResponse.ResponseText);
+                return weatherCollection;
+            }
+            else
+            {
+                throw new Exception("Ошибка запроса");
+            }
+
+        }
     }
 }
