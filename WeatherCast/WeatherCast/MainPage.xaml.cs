@@ -10,17 +10,14 @@ using Xamarin.Forms.StyleSheets;
 
 namespace WeatherCast
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : TabbedPage
     {
         public MainPage()
         {
             InitializeComponent();
-
+            Appdata.Load();
         }
 
-        private async void ImageButton_Clicked(object sender, EventArgs e)
-        {
-            WeatherCollection col = await WeatherAPI.GetWeatherForecast("34.9401", "36.3219");
-        }
+
     }
 }
