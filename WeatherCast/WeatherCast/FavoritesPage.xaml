@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherCast.FavoritesPage"
+             Title="">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" BackgroundColor="#758ABA">
+            <Button HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="50" WidthRequest="80" Text="Добавить город" Clicked="Button_Clicked"/>
+        </Grid>
+    </Grid>
+
+</ContentPage>
