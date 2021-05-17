@@ -42,7 +42,9 @@ namespace WeatherCast
             }
             catch (FileNotFoundException)
             {
-                CurrentCity = new City() { };//сделать москву
+                CurrentCity = new City() { Id= "524894", Name="Москва" };
+                CurrentCity.Coordinates = new CityCoordinates() { Lat = 55.7617, Lon = 37.6067 };
+                CurrentCity.SysInfo = new SysInfo() { Country="RU" };
 
                 FavoritesCities = new List<City>();
 
