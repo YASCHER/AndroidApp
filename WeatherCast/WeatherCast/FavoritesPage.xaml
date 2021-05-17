@@ -14,7 +14,7 @@
                     <ViewCell>
                         <ViewCell.View>
                             <StackLayout>
-                                <Label Text="{Binding Name}" TextColor="White" FontSize="23"></Label>
+                                <Label Text="{Binding Name}" TextColor="White" FontSize="23" Margin="2"></Label>
                                 <Label Text="{Binding SysInfo.Country}" TextColor="White"></Label>
                             </StackLayout>
                         </ViewCell.View>
