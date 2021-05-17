@@ -6,16 +6,15 @@ using System.Text;
 
 namespace WeatherCast
 {
-    public static class Appdata
+    static class Appdata
     {
         public static City CurrentCity { get; set; }
 
         public static List<City> FavoritesCities { get; set; }
 
-        static Appdata()
-        {
+        static Appdata() {
             Appdata.Load();
-        }
+            }
 
         public static void Save()
         {

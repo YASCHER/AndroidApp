@@ -112,6 +112,7 @@ namespace WeatherCast
             parameters.Add("id", id);
             parameters.Add("appid", AppId);
             parameters.Add("lang", "ru");
+            parameters.Add("units", "metric");
 
             WeatherAPIResponse weatherAPIResponse = await Get(RequestType.CurrentWeather, parameters);
 

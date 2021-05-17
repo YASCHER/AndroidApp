@@ -25,6 +25,9 @@ namespace WeatherCast
         [JsonProperty("weather")]
         public Description[] Weather { get; set; }
 
+        [JsonProperty("dt")]
+        public string DateTime { get; set; }
+
 
     }
 }
