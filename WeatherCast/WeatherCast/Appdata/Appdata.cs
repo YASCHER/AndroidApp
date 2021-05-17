@@ -12,6 +12,10 @@ namespace WeatherCast
 
         public static List<City> FavoritesCities { get; set; }
 
+        static Appdata() {
+            Appdata.Load();
+            }
+
         public static void Save()
         {
             string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "currentCity");
