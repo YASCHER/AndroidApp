@@ -13,9 +13,9 @@
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
-                            <StackLayout>
-                                <Label Text="{Binding Name}" TextColor="White" FontSize="23" Margin="2"></Label>
-                                <Label Text="{Binding SysInfo.Country}" TextColor="White"></Label>
+                            <StackLayout >
+                                <Label Text="{Binding Name}" TextColor="White" FontSize="23" Margin="10, 10, 10, 0"></Label>
+                                <Label Text="{Binding SysInfo.Country}" TextColor="White" Margin="10, 0, 10, 10"></Label>
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>
