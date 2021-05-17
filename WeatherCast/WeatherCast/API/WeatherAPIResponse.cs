@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WeatherCast
 {
-    class WeatherAPIResponse
+    public class WeatherAPIResponse
     {
         public string ResponseText { get; private set; }
 

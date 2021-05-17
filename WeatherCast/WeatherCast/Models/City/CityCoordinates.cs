@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WeatherCast
 {
-    class CityCoordinates
+    public class CityCoordinates
     {
         [JsonProperty("lat")]
         public double Lat { get; set; }

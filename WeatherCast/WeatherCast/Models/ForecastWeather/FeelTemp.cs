@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WeatherCast
 {
-    class FeelTemp
+    public class FeelTemp
     {
         [JsonProperty("day")]
         public double day { get; set; }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WeatherCast
 {
-    class CityCollection
+    public class CityCollection
     {
         [JsonProperty("count")]
         public int Count { get; set; }

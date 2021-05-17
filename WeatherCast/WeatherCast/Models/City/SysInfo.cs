@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WeatherCast
 {
-    class SysInfo
+    public class SysInfo
     {
         [JsonProperty("country")]
         public string Country { get; set; }

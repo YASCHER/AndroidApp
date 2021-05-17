@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
             xmlns:local="clr-namespace:WeatherCast"
             x:Class="WeatherCast.MainPage"
+            BackgroundColor="#758ABA"
             BarBackgroundColor="#758ABA">
     <TabbedPage.Children>
         <local:WeatherPage></local:WeatherPage>

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WeatherCast
 {
-    class Weather
+    public class Weather
     {
         [JsonProperty("id")]
         public string Id { get; set; }

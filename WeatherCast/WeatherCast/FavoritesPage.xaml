@@ -3,13 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherCast.FavoritesPage"
              Title="">
-    <Grid>
+    <Grid RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" BackgroundColor="#758ABA">
-            <Button HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="50" WidthRequest="80" Text="Добавить город" Clicked="Button_Clicked"/>
-        </Grid>
+        <ListView Grid.Row="0" HasUnevenRows="true" SeparatorColor="White" BackgroundColor="#758ABA" ItemsSource="{Binding FavoritesCities}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding Name}" TextColor="White" FontSize="23"></Label>
+                                <Label Text="{Binding SysInfo.Country}" TextColor="White"></Label>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Row="1" BorderColor="Transparent" BackgroundColor="#758ABA" TextColor="White" Text="Добавить" Clicked="Button_Clicked"/>
     </Grid>
 
 </ContentPage>

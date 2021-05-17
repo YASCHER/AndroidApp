@@ -70,14 +70,14 @@
                 </StackLayout>
             </Grid>
         </Grid>
-        <Grid Grid.Row="1" HeightRequest="160" ColumnSpacing="0">
+        <Grid BackgroundColor="White" Grid.Row="1" HeightRequest="160" ColumnSpacing="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Grid BackgroundColor="#758ABA" Opacity="0.5">
+            <Grid BackgroundColor="#758ABA" Opacity="0.5" Grid.Column="0">
                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                     <Label x:Name="dayOneTxt" Text="" TextColor="White" FontSize="13" HorizontalOptions="Center"/>
                     <Label x:Name="dateOneTxt" Margin="0,-5,0,0" Text="" TextColor="White" FontSize="10" HorizontalOptions="Center"/>

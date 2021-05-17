@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WeatherCast
 {
-    class WeatherCollection
+    public class WeatherCollection
     {
         [JsonProperty("daily")]
         public List<Day> Days { get; set; }

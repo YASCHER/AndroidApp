@@ -16,7 +16,7 @@ namespace WeatherCast
         Find
     }
 
-    static class WeatherAPI
+    public static class WeatherAPI
     {
         private static string Host { get; set; }
         private static string AppId { get; set; }

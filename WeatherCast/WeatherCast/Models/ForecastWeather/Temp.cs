@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace WeatherCast
 {
-    class Temp
+    public class Temp
     {
         [JsonProperty("day")]
         public double day { get; set; }

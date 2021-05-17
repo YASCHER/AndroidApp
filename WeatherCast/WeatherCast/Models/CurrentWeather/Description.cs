@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WeatherCast
 {
-    class Description
+    public class Description
     {
         [JsonProperty("icon")]
         public string Icon { get; set; }
