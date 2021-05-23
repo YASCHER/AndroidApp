@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,15 +13,28 @@ namespace WeatherCast
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FavoritesPage : ContentPage
     {
-        public List<City> FavoritesCities { get; set; }
+        public ObservableCollection<City> FavoritesCities { get; set; }
         
         public FavoritesPage()
         {
             InitializeComponent();
-            FavoritesCities = Appdata.GetFavoritesCities();
+
+            Appdata.FavoritesCitiesChanged += Appdata_FavoritesCitiesChanged;
+
+            FavoritesCities = new ObservableCollection<City>(Appdata.GetFavoritesCities());
             
             this.BindingContext = this;
             
+        }
+
+        private void Appdata_FavoritesCitiesChanged()
+        {
+            FavoritesCities.Clear();
+            List<City> cities = Appdata.GetFavoritesCities();
+            foreach (City city in cities)
+            {
+                FavoritesCities.Add(city);
+            }
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -28,12 +42,14 @@ namespace WeatherCast
             await Navigation.PushAsync(new AddFavoriteCityPage());
         }
 
-        private async void TapOnCity(object sender, ItemTappedEventArgs e)
+        private void TapOnCity(object sender, ItemTappedEventArgs e)
         {
-            ((MainPage)(Parent.Parent)).CurrentPage = ((MainPage)(Parent)).Children[0];
             Appdata.SetCurrentCity(((City)e.Item));
-            
-            await DisplayAlert($"{((City)e.Item).Id}", "You have been alerted", "OK");
+
+            ((ListView)sender).SelectedItem = null;
+
+            ((MainPage)Parent.Parent).CurrentPage = ((MainPage)Parent.Parent).Children[0];
+
         }
 
       
