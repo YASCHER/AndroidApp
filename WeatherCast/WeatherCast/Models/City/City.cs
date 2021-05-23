@@ -7,11 +7,20 @@ namespace WeatherCast
 {
     public class City
     {
+        private string name;
+
         [JsonProperty("id")]
         public string Id { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string Name { 
+            get {
+                return name.ToUpper();
+            } 
+            set {
+                name = value;
+            } 
+        }
 
         [JsonProperty("coord")]
         public CityCoordinates Coordinates {get; set;}
