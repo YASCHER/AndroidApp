@@ -16,6 +16,10 @@ namespace WeatherCast
         public WeatherPage()
         {
             InitializeComponent();
+
+            Appdata.CurrentCityChanged += ShowCurrentWeather;
+            Appdata.FavoritesCitiesChanged += ShowForecastWeather;
+
             ShowCurrentWeather();
             ShowForecastWeather();
         }
