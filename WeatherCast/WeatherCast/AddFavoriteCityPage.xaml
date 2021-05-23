@@ -8,12 +8,12 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Entry Grid.Row="0" Placeholder="Поиск" TextColor="White" TextChanged="Entry_TextChanged"></Entry>
-        <ListView Grid.Row="1" HasUnevenRows="true" SeparatorColor="White" BackgroundColor="#758ABA"  ItemsSource="{Binding FindedCites}" ItemTapped="ListView_ItemTapped">
+        <ListView Grid.Row="1" HasUnevenRows="true" SeparatorColor="White" BackgroundColor="#758ABA"  ItemsSource="{Binding FindedCities}" ItemTapped="ListView_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
-                            <StackLayout >
+                            <StackLayout Grid.Column="0">
                                 <Label Text="{Binding Name}" TextColor="White" FontSize="21" FontAttributes="Bold" Margin="10, 10, 10, 0"></Label>
                                 <Label Text="{Binding SysInfo.Country}" TextColor="White" Margin="10, 0, 10, 10"></Label>
                             </StackLayout>

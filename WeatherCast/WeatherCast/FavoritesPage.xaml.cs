@@ -44,7 +44,7 @@ namespace WeatherCast
 
         private void TapOnCity(object sender, ItemTappedEventArgs e)
         {
-            Appdata.SetCurrentCity(((City)e.Item));
+            Appdata.SetCurrentCity((City)e.Item);
 
             ((ListView)sender).SelectedItem = null;
 
@@ -52,6 +52,9 @@ namespace WeatherCast
 
         }
 
-      
+        private void DeleteCity(object sender, EventArgs e)
+        {
+            Appdata.DeleteFavoriteCity(((Button)sender).CommandParameter.ToString());
+        }
     }
 }

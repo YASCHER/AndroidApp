@@ -68,11 +68,5 @@ namespace WeatherCast
             tempFourTxt.Text = (Convert.ToInt32(result.Days[3].Temp.day)).ToString();
         }
 
-
-        private async void ImageButton_Clicked(object sender, EventArgs e)
-        {
-            CityCollection col = await WeatherAPI.FindCity("Кама");
-            
-        }
     }
 }

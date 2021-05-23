@@ -8,15 +8,22 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="0" HasUnevenRows="true" SeparatorColor="White" BackgroundColor="#758ABA" ItemsSource="{Binding FavoritesCities}" ItemTapped="TapOnCity">
+        <ListView Grid.Row="0" x:Name="FavoritesList" HasUnevenRows="true" SeparatorColor="White" BackgroundColor="#758ABA" ItemsSource="{Binding FavoritesCities}" ItemTapped="TapOnCity">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
-                            <StackLayout>
-                                <Label x:Name="LabelCityName" Text="{Binding Name}" TextColor="White" FontSize="21" FontAttributes="Bold" Margin="10, 10, 10, 0"></Label>
-                                <Label Text="{Binding SysInfo.Country}" TextColor="White" Margin="10, 0, 10, 10"></Label>
-                            </StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.78*"></ColumnDefinition>
+                                    <ColumnDefinition Width="0.22*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0">
+                                    <Label x:Name="LabelCityName" Text="{Binding Name}" TextColor="White" FontSize="21" FontAttributes="Bold" Margin="10, 10, 10, 0"></Label>
+                                    <Label Text="{Binding SysInfo.Country}" TextColor="White" Margin="10, 0, 10, 10"></Label>
+                                </StackLayout>
+                                <Button Grid.Column="1" CommandParameter="{Binding Id}" BorderColor="Transparent" BackgroundColor="#758ABA" TextColor="White"  Text="Удалить" Clicked="DeleteCity"></Button>
+                            </Grid>
                         </ViewCell.View>
                     </ViewCell>
                 </DataTemplate>
