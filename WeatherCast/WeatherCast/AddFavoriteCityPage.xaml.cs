@@ -41,7 +41,7 @@ namespace WeatherCast
 
         private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            Appdata.FavoritesCities.Add((City)e.Item);
+            Appdata.AddFavoriteCity((City)e.Item);
             await Navigation.PopAsync();
         }
     }

@@ -22,10 +22,10 @@ namespace WeatherCast
 
         private async void ShowCurrentWeather()
         {
-            Weather result = await WeatherAPI.GetCurrentWeather(Appdata.CurrentCity.Id);
+            Weather result = await WeatherAPI.GetCurrentWeather(Appdata.GetCurrentCity().Id);
             descriptionTxt.Text = result.Descriptions[0].Info.ToUpper();
             iconImg.Source = $"w{result.Descriptions[0].Icon}";
-            cityTxt.Text = Appdata.CurrentCity.Name;
+            cityTxt.Text = Appdata.GetCurrentCity().Name;
             temperatureTxt.Text = Convert.ToInt32(result.MainInfo.Temp).ToString();
             humidityTxt.Text = $"{result.MainInfo.Humidity}%";
             pressureTxt.Text = $"{result.MainInfo.Pressure} гПа";
@@ -39,7 +39,7 @@ namespace WeatherCast
 
         private async void ShowForecastWeather()
         {
-            WeatherCollection result = await WeatherAPI.GetWeatherForecast(Appdata.CurrentCity.Coordinates.Lat.ToString(), Appdata.CurrentCity.Coordinates.Lon.ToString());
+            WeatherCollection result = await WeatherAPI.GetWeatherForecast(Appdata.GetCurrentCity().Coordinates.Lat.ToString(), Appdata.GetCurrentCity().Coordinates.Lon.ToString());
 
 
             

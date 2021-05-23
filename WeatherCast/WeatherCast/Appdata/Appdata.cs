@@ -2,19 +2,64 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace WeatherCast
 {
+
     static class Appdata
     {
-        public static City CurrentCity { get; set; }
 
-        public static List<City> FavoritesCities { get; set; }
+        private static City CurrentCity { get; set; }
+
+        private static List<City> FavoritesCities { get; set; }
+
+        public static event Action CurrentCityChanged;
+
+        public static event Action FavoritesCitiesChanged;
 
         static Appdata() {
             Appdata.Load();
+        }
+
+        public static void SetCurrentCity(City city)
+        {
+            CurrentCity = city;
+            if (CurrentCityChanged != null)
+            {
+                CurrentCityChanged();
             }
+        }
+
+        public static City GetCurrentCity()
+        {
+            return CurrentCity;
+        }
+
+        public static void AddFavoriteCity(City city)
+        {
+            FavoritesCities.Add(city);
+            if (FavoritesCitiesChanged != null)
+            {
+                FavoritesCitiesChanged();
+            }
+        }
+
+        public static void DeleteFavoriteCity(string id)
+        {
+            City city = FavoritesCities.Where(x => x.Id == id).First();
+            FavoritesCities.Remove(city);
+            if (FavoritesCitiesChanged != null)
+            {
+                FavoritesCitiesChanged();
+            }
+        }
+
+        public static List<City> GetFavoritesCities()
+        {
+            return FavoritesCities;
+        }
 
         public static void Save()
         {
