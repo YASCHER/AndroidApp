@@ -17,7 +17,7 @@ namespace WeatherCast
         public FavoritesPage()
         {
             InitializeComponent();
-            FavoritesCities = Appdata.FavoritesCities;
+            FavoritesCities = Appdata.GetFavoritesCities();
             this.BindingContext = this;
             
         }
