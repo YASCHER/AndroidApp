@@ -18,6 +18,7 @@ namespace WeatherCast
         {
             InitializeComponent();
             FavoritesCities = Appdata.GetFavoritesCities();
+            
             this.BindingContext = this;
             
         }
@@ -29,7 +30,9 @@ namespace WeatherCast
 
         private async void TapOnCity(object sender, ItemTappedEventArgs e)
         {
-            //((MainPage)(Parent)).CurrentPage = ((MainPage)(Parent)).Children[0];
+            ((MainPage)(Parent.Parent)).CurrentPage = ((MainPage)(Parent)).Children[0];
+            Appdata.SetCurrentCity(((City)e.Item));
+            
             await DisplayAlert($"{((City)e.Item).Id}", "You have been alerted", "OK");
         }
 
