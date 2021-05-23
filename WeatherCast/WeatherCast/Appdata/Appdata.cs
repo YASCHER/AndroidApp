@@ -50,9 +50,24 @@ namespace WeatherCast
                 CurrentCity.Coordinates = new CityCoordinates() { Lat = 55.7617, Lon = 37.6067 };
                 CurrentCity.SysInfo = new SysInfo() { Country="RU" };
 
+
+
                 FavoritesCities = new List<City>();
 
                 FavoritesCities.Add(CurrentCity);
+
+
+               City city1 = new City() {Id= "542420", Name= "Krasnodar" };
+                city1.Coordinates = new CityCoordinates() { Lat = 45.03278, Lon = 38.976944 };
+                city1.SysInfo = new SysInfo() { Country = "RU" };
+
+                City city2 = new City() { Id = "511196", Name = "Perm" };
+                city2.Coordinates = new CityCoordinates() { Lat = 58.01741, Lon = 56.285519 };
+                city2.SysInfo = new SysInfo() { Country = "RU" };
+
+                FavoritesCities.Add(city1);
+                FavoritesCities.Add(city2);
+
             }
         }
     }

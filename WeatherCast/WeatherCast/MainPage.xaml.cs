@@ -15,6 +15,7 @@ namespace WeatherCast
         public MainPage()
         {
             InitializeComponent();
+            
         }
 
 

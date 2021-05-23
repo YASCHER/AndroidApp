@@ -8,13 +8,13 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="0" HasUnevenRows="true" SeparatorColor="White" BackgroundColor="#758ABA" ItemsSource="{Binding FavoritesCities}">
+        <ListView Grid.Row="0" HasUnevenRows="true" SeparatorColor="White" BackgroundColor="#758ABA" ItemsSource="{Binding FavoritesCities}" ItemTapped="TapOnCity">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
-                            <StackLayout >
-                                <Label Text="{Binding Name}" TextColor="White" FontSize="21" FontAttributes="Bold" Margin="10, 10, 10, 0"></Label>
+                            <StackLayout>
+                                <Label x:Name="LabelCityName" Text="{Binding Name}" TextColor="White" FontSize="21" FontAttributes="Bold" Margin="10, 10, 10, 0"></Label>
                                 <Label Text="{Binding SysInfo.Country}" TextColor="White" Margin="10, 0, 10, 10"></Label>
                             </StackLayout>
                         </ViewCell.View>
