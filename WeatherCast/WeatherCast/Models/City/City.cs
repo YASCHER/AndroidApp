@@ -10,7 +10,7 @@ namespace WeatherCast
         private string name;
 
         [JsonProperty("id")]
-        public string Id { get; set; }
+        public string Id { get; set; } // habr почему мы никогда не должны использовать MongoDB
 
         [JsonProperty("name")]
         public string Name { 

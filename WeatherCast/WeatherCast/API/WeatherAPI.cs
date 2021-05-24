@@ -85,7 +85,7 @@ namespace WeatherCast
             parameters.Add("type", "like");
             parameters.Add("sort", "population");
             parameters.Add("cnt", "5");
-            parameters.Add("lang", "ru");
+            parameters.Add("lang", "ru");//!!!!!!!!!!!!!!!
 
             WeatherAPIResponse weatherAPIResponse = await Get(RequestType.Find, parameters);
 
@@ -96,7 +96,7 @@ namespace WeatherCast
             }
             else
             {
-                throw new Exception("Ошибка запроса");
+                throw new Exception("Ошибка запроса");//НЕТЕПИЗИРОВАННЫЙ EXCEPTION (3 состояния)
             }
         }
 
